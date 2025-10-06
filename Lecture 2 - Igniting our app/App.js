@@ -1,3 +1,7 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+
 // If we want to make nested elements and tags then we have to pass the React.createElement() inside the children of the outer react element
 
 /* <div>
@@ -16,7 +20,7 @@ const parent_1 = React.createElement(
         React.createElement(
             "h1",
             {id : "heading_1"},
-            "I am a H1 tag"
+            "Episode 2 : Namaste React"
         )));
 
 const root_1 = ReactDOM.createRoot(document.getElementById("root_1"));
