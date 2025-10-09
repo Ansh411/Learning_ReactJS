@@ -41,7 +41,6 @@ then JSX(React) takes care of the malicious file and React automatically escapes
 ⭕ Example of cross-site scripting
 
 function App({ message }) { // This is a component where message is being fetched by API
-
 return <div>{message}</div>;
 }
 
