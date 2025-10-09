@@ -1,0 +1,30 @@
+{
+  "name": "lecture-3---laying-the-foundation",
+  "version": "1.0.0",
+  "description": "Laying the foundation about jsx",
+  "scripts": {
+    "start" : "parcel index.html",
+    "build" : "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ansh411/Learning_ReactJS.git#main"
+  },
+  "keywords": [
+    "JSX"
+  ],
+  "author": "Ansh Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ansh411/Learning_ReactJS/issues"
+  },
+  "homepage": "https://github.com/Ansh411/Learning_ReactJS/tree/main#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

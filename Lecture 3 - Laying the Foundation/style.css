@@ -1,8 +1,11 @@
+*{
+    background-color: black;
+}
 
-#parent {
+h1 {
     color: aqua;
 }
 
-#child , #child2{
+h2{
     color: greenyellow;
 }
