@@ -1,19 +1,22 @@
 ## Basic Structure / Design of the Food-Delivery WebApp Project
 
--- Header
-    - Logo
-    - Nav-items
--- Body
-    - Search
-    - Restaurant Container
-        - Restaurant Card
-            - Image of the restaurant / food items
-            - Name, Cuisines, Avg. Rating, Delivery Time 
--- Footer
-    - Copyright
-    - Social Media Links
-    - Address
-    - Contact
+```bash
+Namaste-React/
+├── Header/
+│   ├── Logo/
+│   ├── Nav-items/
+├── Body/
+│   ├── Search/
+│   ├── Restaurant Container/
+│       ├── Restaurant Card/
+│           ├── Image of the restaurant / food items/
+│           ├── Name, Cuisines, Avg. Rating, Delivery Time/
+├── Footer/
+│   ├── Copyright/
+│   ├── Social Media Links/
+│   ├── Address/
+│   ├── Contact/
+```
 
 ## Different way of using CSS in React
 
