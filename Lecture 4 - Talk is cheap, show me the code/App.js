@@ -1784,6 +1784,12 @@ const RestaurantCard = (props) => {
     )
 }
 
+/* Keys are very important part in React where more than 1 children is introduced as to identify between them.
+  Without the keys , react will never differentiate among the updated child (added / deleted) and it will re-render all the children, so it will be very costly(takes more time)
+  On the other hand if we have keys so we can differentiate among the children and react identifies which element to be rendered into the DOM
+
+  Without keys   <<<<<   Index as keys   <<<<<   Unique IDs as keys
+*/
 
 const Body = () => {
     return (
@@ -1791,11 +1797,12 @@ const Body = () => {
             <div className="search">
                 Search
             </div>
-            <div className="res-container">
+            <div className="res-container">  
                 {
-                    resList.map(restaurant => <RestaurantCard key = {restaurant.info.id} resData = {restaurant}/>)
+                  // Here we run a loop(map) to get all the restaurants with less code from the resList and give key as its unique ID
+                resList.map(restaurant => <RestaurantCard key = {restaurant.info.id} resData = {restaurant}/>) // Whatever we define as key in props should be passed in components
                 }
-            </div>
+            </div> 
         </div>
     )
 }

@@ -59,3 +59,17 @@ With the external file , it is easy to maintain styling code of any element and 
      It allows for flexible, dynamic interfaces that can be modified without changing the core application logic.
 
  ➡️ A Config-Driven UI means the structure and nature of the UI are controlled by the data we used to get from the backend in the form of JSON.
+
+ ## Keys in React
+
+ ➡️ Keys are very important part in React where more than 1 children is introduced as to identify between them.
+ ➡️ Without the keys , react will never differentiate among the updated child (added / deleted) and it will re-render all the children, so it will be very costly(takes more time)
+ ➡️ On the other hand if we have keys so we can differentiate among the children and react identifies which element to be rendered into the DOM
+
+ ✅ Without keys   <<<<<   Index as keys   <<<<<   Unique IDs as keys
+
+ ## Keys (Technical Terms)
+
+➡️ Keys are unique identifiers that help React distinguish between elements in a list.
+➡️ Without keys, React can’t efficiently determine which elements were changed, added, or removed, so it may re-render or reuse DOM elements incorrectly.
+➡️ With keys, React can perform efficient updates to only the modified elements, improving performance and accuracy.
