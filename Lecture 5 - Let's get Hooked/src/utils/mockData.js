@@ -1,31 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://i.postimg.cc/sXZDd4WN/Chat-GPT-Image-Oct-12-2025-03-25-26-AM.png"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Offers</li>
-                    <li><i className="fas fa-cart-shopping"></i></li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-// This is another way of giving styles to any react element by using styles as object and pass it using "{}" as JS thing as we are not allowed to use it directly
-
-const styles = {
-    backgroundColor : "#f0f0f0"
-};
-
 const resList = [
                   {
                     "info": {
@@ -225,7 +197,7 @@ const resList = [
                         "Bakery",
                         "Desserts"
                       ],
-                      "avgRating": 4.3,
+                      "avgRating": 3.4,
                       "parentId": "2098",
                       "avgRatingString": "4.3",
                       "totalRatingsString": "265",
@@ -421,7 +393,7 @@ const resList = [
                         "Beverages",
                         "Desserts"
                       ],
-                      "avgRating": 4.3,
+                      "avgRating": 3.9,
                       "parentId": "11633",
                       "avgRatingString": "4.3",
                       "totalRatingsString": "2.5K+",
@@ -607,7 +579,7 @@ const resList = [
                         "Beverages",
                         "Juice and shake"
                       ],
-                      "avgRating": 4.4,
+                      "avgRating": 3.8,
                       "parentId": "588706",
                       "avgRatingString": "4.4",
                       "totalRatingsString": "694",
@@ -1764,58 +1736,4 @@ const resList = [
                   },
                 ]
 
-const RestaurantCard = (props) => {
-    const {resData} = props;
-
-    const {name , cuisines , avgRating , costForTwo , sla} = resData?.info;
-    return ( 
-        <div className="res-card" style={styles}>
-            <img className="res-logo"
-            alt="res-img" 
-            src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.info.cloudinaryImageId }></img>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <span>
-            <h4>{avgRating}<i className="fa-solid fa-star"></i></h4>
-            <h4>{costForTwo}</h4>
-            <h4>{sla.slaString}</h4>
-            </span>
-        </div>
-    )
-}
-
-/* Keys are very important part in React where more than 1 children is introduced as to identify between them.
-  Without the keys , react will never differentiate among the updated child (added / deleted) and it will re-render all the children, so it will be very costly(takes more time)
-  On the other hand if we have keys so we can differentiate among the children and react identifies which element to be rendered into the DOM
-
-  Without keys   <<<<<   Index as keys   <<<<<   Unique IDs as keys
-*/
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="res-container">  
-                {
-                  // Here we run a loop(map) to get all the restaurants with less code from the resList and give key as its unique ID
-                resList.map(restaurant => <RestaurantCard key = {restaurant.info.id} resData = {restaurant}/>) // Whatever we define as key in props should be passed in components
-                }
-            </div> 
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header />
-            <Body />
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout/>);
+export default resList; 

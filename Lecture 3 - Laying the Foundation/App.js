@@ -61,7 +61,7 @@ const HeadingComponent_1 = () => (        // We can add nested elements/ tags
 </div>
 );
 
-const HeadingComponent_2 = () => (    // If we want to use another component inside any components
+const HeadingComponent_2 = () => (    // If we want to use another component inside any components (Component Composition)
     <div id="container_2">
         <Title />
         <h1 className="Component">Namaste React Functional Components</h1>

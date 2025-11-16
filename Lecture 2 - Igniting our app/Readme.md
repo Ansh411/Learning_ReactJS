@@ -4,7 +4,7 @@
 
 - Dev Build : It build the app and initialise it
 - Local Server : It hosts the app to a local server
-- HMR : Hot Module Replacement (It changes the updated code without refreshong the page with the help of parcel cache)
+- HMR : Hot Module Replacement (It changes the updated code without refreshing the page with the help of parcel cache)
 
 - It uses File Watching Algorithm (keeps track on any changes) : It is written in C++
 
