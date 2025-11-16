@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font + Theme */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px;
+    padding: 12px 20px;
+    background-image: linear-gradient(to left, rgba(204, 43, 94, 0.6), rgba(117, 58, 136, 0.7));
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.25);
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    width: 110px;
+}
+
+/* Navbar */
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-items ul li {
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 8px 5px;
+}
+
+.nav-items ul li:hover {
+    color: #58a6ff;
+}
+
+/* Search */
+.filter {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 12px 18px;
+    font-size: 18px;
+    border-radius: 10px;
+    /* background-color: white; */
+    /* box-shadow: 0px 4px 20px rgba(0,0,0,0.1); */
+}
+
+.filter-btn {
+    cursor: pointer;
+}
+
+/* Restaurant Layout */
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+/* Restaurant Card */
+.res-card {
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 12px;
+    margin: 20px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.12);
+    transition: 0.25s ease;
+}
+
+.res-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 25px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+/* Restaurant Image */
+.res-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Restaurant Title */
+.res-card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Cuisines */
+.res-card h4 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6d6d6d;
+    margin-top: 4px;
+}
+
+/* Rating, Cost, Time Row */
+.res-card span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/* ⭐ BEAUTIFUL RATING BADGE */
+.res-card span h4:first-child {
+    display: flex;
+    align-items: center;
+    background-color: #0f8a2e;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    gap: 5px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+}
+
+.res-card span h4:first-child .fa-star {
+    font-size: 11px;
+    filter: drop-shadow(0px 0px 1px #ffffff);
+}
+
+/* 💸 Price & ⏱ Delivery Time */
+.res-card span h4:nth-child(2),
+.res-card span h4:nth-child(3) {
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    color: #3d8bfd !important;   /* bright blue theme */
+    opacity: 0.9;
+}
+
+/* Hover effect on rating only */
+.res-card:hover span h4:first-child {
+    transform: scale(1.05);
+}
+
+.res-card,
+.res-card *,
+.res-card span {
+    resize: none !important;
+    overflow: hidden !important;
+    cursor: default;
+}
