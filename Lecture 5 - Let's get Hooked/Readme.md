@@ -20,7 +20,7 @@ Import : We directly import it like : import COMPONENT_NAME from "COMPONENT_PATH
 
 Export : When we have multiple components in a single file and we have to export all of them then we add "export" in the declaration of the components 
 
-For Eg: export const Header = () => {} 
+For Eg: export const Header = () => {} <br>
         export const Navbar = () => {}
 
 Import : To import these named exports we use {} for the exact component we want to import
