@@ -1,12 +1,44 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer.js";
 
 const Body = () => {
 
     // Local State Variable - Used to update the state of a component (UI part) not just data
 
-    const [listOfRestaurants , setlistOfRestaurants] = useState(resList);
+    const [listOfRestaurants , setlistOfRestaurants] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+
+        const json = await data.json();
+
+        console.log(json);
+
+        const allCards = json?.data?.cards;
+        let restaurants = [];
+
+        for (const card of allCards) {
+        const possible_restaurants = card?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+        if (possible_restaurants) {
+        restaurants = possible_restaurants;
+        break;
+      }
+    };
+
+        setlistOfRestaurants(restaurants);
+        
+    };
+
+    if(listOfRestaurants.length === 0){
+        return <Shimmer />;
+    }
 
     return (
         <div className="body">
