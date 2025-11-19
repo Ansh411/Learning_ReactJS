@@ -44,24 +44,78 @@ body {
     padding: 8px 5px;
 }
 
+.login-btn {
+    padding: 8px 14px;
+    font-size: 18px;
+    background: none;
+    border-radius: 10%;
+    cursor: pointer;
+    color: white;  
+    transition: 0.2s ease;
+}
+
+
 .nav-items ul li:hover {
     color: #58a6ff;
 }
 
-/* Search */
+/* CONTAINER for search + top rated button */
 .filter {
-    width: fit-content;
-    margin: 20px auto;
-    padding: 12px 18px;
-    font-size: 18px;
-    border-radius: 10px;
-    /* background-color: white; */
-    /* box-shadow: 0px 4px 20px rgba(0,0,0,0.1); */
+  display: flex;
+  align-items: center;
+  gap: 16px;          /* space between search box and top rated button */
+  margin: 20px 0;
 }
 
-.filter-btn {
-    cursor: pointer;
+/* SEARCH SECTION (input + button together) */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;           /* spacing between input and button */
 }
+
+/* SEARCH INPUT BOX */
+.search-box {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  outline: none;
+}
+
+.filter {
+    align-items: center;
+    justify-content: center;
+}
+
+/* SEARCH BUTTON */
+.search button,
+.filter-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #ff914d;   /* simple orange */
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+/* SAME HOVER FOR BOTH BUTTONS */
+.search button:hover,
+.filter-btn:hover {
+  background-color: #ff7a26;
+}
+
+/* Disable style for search results = faded background but text stays visible */
+.search button:disabled,
+.filter-btn:disabled {
+  background-color: #f2c2a6;
+  color: white;   /* keep text visible */
+  opacity: 1;     /* prevent text from looking faded */
+}
+
 
 /* Restaurant Layout */
 .res-container {

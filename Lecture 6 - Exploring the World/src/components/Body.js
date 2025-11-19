@@ -9,6 +9,12 @@ const Body = () => {
 
     const [listOfRestaurants , setlistOfRestaurants] = useState([]);
 
+    const[filterRestaurant , setfilterRestaurant] = useState([]);
+
+    const[searchText, setSearchText] = useState("");
+
+    console.log("Body Rendered");
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -33,20 +39,37 @@ const Body = () => {
     };
 
         setlistOfRestaurants(restaurants);
+        setfilterRestaurant(restaurants);
         
     };
 
-    if(listOfRestaurants.length === 0){
-        return <Shimmer />;
-    }
+    // Conditional Rendering
 
-    return (
+    return listOfRestaurants.length === 0 ? (
+        <Shimmer />
+    ) : (
         <div className="body">
             <div className="filter">
+                <div className="search">
+                    <input type="text" className="search-box" value={searchText} onChange={(e) => {
+                        setSearchText(e.target.value);
+                    }}
+                    />
+                    <button onClick={() => {
+                        console.log(searchText);
+
+                        const filtered = listOfRestaurants.filter((res) => {
+                            return res.info?.name?.toLowerCase().includes(searchText.toLowerCase())
+                        });
+
+                        setfilterRestaurant(filtered);
+
+                    }}>Search</button>
+                </div>
                 <button className="filter-btn"
                 onClick={() => {
-                    const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
-                    setlistOfRestaurants(filteredList);
+                    const TopResList = listOfRestaurants.filter((res) => res.info.avgRating > 4.2);
+                    setfilterRestaurant(TopResList);
                 }}
                 >
                 Top Rated Restaurants</button>   
@@ -54,7 +77,7 @@ const Body = () => {
             <div className="res-container">  
                 {
                   // Here we run a loop(map) to get all the restaurants with less code from the resList and give key as its unique ID
-                listOfRestaurants.map(restaurant => <RestaurantCard key = {restaurant.info.id} resData = {restaurant}/>) // Whatever we define as key in props should be passed in components
+                filterRestaurant.map(restaurant => <RestaurantCard key = {restaurant.info.id} resData = {restaurant}/>) // Whatever we define as key in props should be passed in components
                 }
             </div> 
         </div>
