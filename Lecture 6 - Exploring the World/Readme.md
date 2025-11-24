@@ -45,7 +45,7 @@ This makes the service easier to update, test, and scale without touching other 
 
 The dependency array tells React when to run the effect:<br>
 
-⭕ [] → run only once (like componentDidMount).<br>
+⭕ [] → run only once on initial render (when component first loads) (like componentDidMount).<br>
 
 ⭕ [value] → run whenever value changes.<br>
 
