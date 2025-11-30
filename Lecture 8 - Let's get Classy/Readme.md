@@ -112,6 +112,7 @@ like if the state variable is count , so we do like:
         // then update
         }
     }
+```
 <br/>
 
 and if there are two state variables (count_1 and count_2) then :
