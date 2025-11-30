@@ -24,10 +24,10 @@ You tell React which component should show on which URL path. <br/>
 
 `code`
 
-const appRouter = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/about", element: <About /> }
-]);
+    const appRouter = createBrowserRouter([
+    { path: "/", element: <Home /> },
+    { path: "/about", element: <About /> }
+    ]);
 
 ---
 

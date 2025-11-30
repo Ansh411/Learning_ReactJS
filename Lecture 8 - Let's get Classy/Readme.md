@@ -52,20 +52,20 @@ This batching makes rendering faster and avoids unnecessary DOM updates.<br/>
 
 ➡️ For Eg: If I have child 1 and child 2 components, then execution will be like:<br/>
 
-    -- Parent Constructor Called <br/>
-    -- Parent Render Called <br/>
+    -- Parent Constructor Called 
+    -- Parent Render Called 
 
-    -- Child 1 Constructor Called <br/>
-    -- Child 1 Render Called <br/>
+    -- Child 1 Constructor Called
+    -- Child 1 Render Called 
 
-    -- Child 2 Constructor Called <br/>
-    -- Child 2 Render Called <br/>
+    -- Child 2 Constructor Called
+    -- Child 2 Render Called 
 
-    <DOM UPDATE - IN SINGLE BATCH> <br/>
+    <DOM UPDATE - IN SINGLE BATCH> 
 
-    -- Child 1 Component Did Mount Called <br/>
-    -- Child 2 Component Did Mount Called <br/>
-    -- Parent Component Did Mount Called <br/>
+    -- Child 1 Component Did Mount Called 
+    -- Child 2 Component Did Mount Called 
+    -- Parent Component Did Mount Called
 
 ### How to make API calls in class based components and updation lifecycle (componentDidUpdate)
 
@@ -107,21 +107,21 @@ but if we want to update according to change in state variable then , we use if-
 like if the state variable is count , so we do like:
 
 `code`
-componentDidUpdate (prevProps, prevState) {
+    componentDidUpdate (prevProps, prevState) {
     if(this.state.count !== prevState.count){
         // then update
+        }
     }
-}
 ---
 
 and if there are two state variables (count_1 and count_2) then :
 
 `code`
-componentDidUpdate (prevProps, prevState) {
+    componentDidUpdate (prevProps, prevState) {
     if(this.state.count_1 !== prevState.count_1 || this.state.count_2 !== prevState.count_2){
         // then update
+        }
     }
-}
 
 ---
 
@@ -129,15 +129,15 @@ and if there are different updates according to different state variables then w
 
 `code`
 
-componentDidUpdate (prevProps, prevState) {
+    componentDidUpdate (prevProps, prevState) {
     if(this.state.count !== prevState.count){
         // then do something
     }
 
     if(this.state.count_2 !== prevState.count_2){
         // then do something
+        }
     }
-}
 ---
 
 #### What is the main role of ComponentWillUnmount
@@ -151,19 +151,19 @@ For example, if you start a setInterval in componentDidMount, it will keep runni
 
 For Eg: If we have setInterval in componentDidMount like:
 `code`
-componentDidMount() {
+    componentDidMount() {
     this.timer = setInterval(() => {
         console.log("Ansh OP")
-    }, 1000);
-}
+     }, 1000);
+    }
 ---
 So this will be running even if I move to other pages and if I return to the same page it will also start again this new setInterval and it will keep on going untill we clear it
 
 So that is why we use ComponentWillUnmount to clear things that need to stop when we move to other page
 `code`
-ComponentWillUnmount(){
-    clearInterval(this.timer);
-}
+    ComponentWillUnmount(){
+     clearInterval(this.timer);
+    }
 
 ---
 #### In case of useEffect , how will we clear the setInterval if initiated
@@ -172,7 +172,7 @@ ComponentWillUnmount(){
 ➡️ This return function runs when the component unmounts, working exactly like componentWillUnmount
 
 `code`
-➡️ useEffect(() => {
+    ➡️ useEffect(() => {
 
     const timer = setInterval(() => {
         console.log("Ansh OP");
@@ -185,9 +185,9 @@ ComponentWillUnmount(){
         clearInterval(timer);
         console.log("useEffect return");
     }
-},[]);
+    },[]);
 
-console.log("render");
+    console.log("render");
 ---
 Output will be : 
 
