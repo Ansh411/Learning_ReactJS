@@ -1,4 +1,4 @@
-### Class-Based Components in React
+# Class-Based Components in React
 
 ➡️ Class components are an older way of writing React components using ES6 classes instead of functions.<br/>
 ➡️ They use render() to return UI and manage state using this.state and this.setState().<br/>
