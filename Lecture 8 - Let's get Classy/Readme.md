@@ -201,3 +201,19 @@ Output will be :
 -- render<br/>
 -- useEffect<br/>
 -- useEffect return<br/>
+
+### We can use async directly in componentDidMount but not in useEffect . Why ??
+
+➡️ **componentDidMount** can be async because React doesn’t care about the return value.<br/>
+
+➡️ componentDidMount() is just a normal class method.
+
+React does not use its return value. <br/>
+
+➡️ **useEffect** CANNOT be async because its return value has a special meaning.
+
+Whatever you return from useEffect is treated as a cleanup function.<br/>
+
+➡️ But when you make useEffect async, it returns a Promise, NOT a cleanup function.
+
+React sees a Promise and gets confused → ❌ not allowed.<br/>
