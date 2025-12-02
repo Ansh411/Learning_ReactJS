@@ -2,7 +2,7 @@
 
 ### What are Custom Hooks?
 
-➡️ Custom Hooks are reusable JavaScript functions in React that start with the name "use" and allow you to extract and reuse component logic.<br/>
+➡️ Custom Hooks are reusable JavaScript utility functions in React that start with the name "use" and allow you to extract and reuse component logic.<br/>
 
 For Eg: <br/>
 
