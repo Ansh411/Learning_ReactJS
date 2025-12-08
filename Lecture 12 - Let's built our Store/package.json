@@ -1,0 +1,38 @@
+{
+  "name": "redux-state-management",
+  "version": "1.0.0",
+  "description": "react hooks useState",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ansh411/Learning_ReactJS.git#main"
+  },
+  "keywords": [
+    "react",
+    "hooks"
+  ],
+  "author": "Ansh Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ansh411/Learning_ReactJS/issues"
+  },
+  "homepage": "https://github.com/Ansh411/Learning_ReactJS/tree/main#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "framer-motion": "^12.23.25",
+    "lucide-react": "^0.556.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^6.30.2",
+    "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}
